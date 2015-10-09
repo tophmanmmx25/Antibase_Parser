@@ -11,6 +11,7 @@ myDir = args[1]
 setwd(myDir)
 
 run_xcms <- function() {
+  #Collects LCMS data and builds a table of molecular features for analysis
   xset <- xcmsSet(scanrange= c(245, 1685))
   xsg1 <- group(xset, method = "mzClust", mzppm = 20, mzabs =0, minsamp =3, minfrac =0)
   xsg2 <- fillPeaks(xsg1)
